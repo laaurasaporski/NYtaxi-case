@@ -1,4 +1,4 @@
-# Case Técnico iFood — Pipeline de Táxis de NY com Data Quality em primeiro lugar
+# Case Técnico — Pipeline de Táxis de NY com Data Quality em primeiro lugar
 
 Ingestão, modelagem e análise dos dados de táxi amarelo de NYC (jan–mai/2023) em uma
 arquitetura Medallion no Databricks, com uma camada de qualidade que garante que as
