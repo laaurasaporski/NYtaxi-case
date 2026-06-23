@@ -22,7 +22,7 @@ respostas analíticas sejam **confiáveis**, não apenas calculadas.
 
 - **Databricks Free Edition** — o Community Edition foi descontinuado em jan/2026; adaptei para o Free Edition (serverless).
 - **PySpark + Delta Lake** — requisito do case + transações ACID e evolução de schema.
-- **Unity Catalog** — governança e linhagem nativas, coerente com o stack do iFood.
+- **Unity Catalog** — governança e linhagem nativas, coerentes com o stack solicitado.
 - **Cast explícito de tipos na ingestão** — a fonte da TLC publica colunas com tipos inconsistentes entre meses; padronizei na entrada.
 - **Quarentena em vez de descarte** — registros reprovados são isolados e auditáveis.
 - **DQ em PySpark puro** — transparente para o case; em produção, equivaleria a expectations declarativas.
