@@ -1,0 +1,3 @@
+# Databricks Free Edition (serverless) já traz Spark + Python.
+# A ingestão usa apenas a biblioteca padrão (urllib) — sem dependências extras.
+pyspark>=3.5
