@@ -1,3 +1,25 @@
+# NYC Taxi Case — Pipeline de Dados com Data Quality em primeiro lugar
+
+Pipeline de ingestão, modelagem e análise dos dados de táxi amarelo de NYC (jan–mai/2023),
+construído em arquitetura **Medallion** no Databricks. O diferencial da solução é uma
+**camada de qualidade de dados** que garante que as respostas analíticas sejam **confiáveis**,
+e não apenas calculadas.
+
+> **Abordagem:** o enunciado é um case de Data Architect, mas a entrega traz a lente de um
+> **Data Tester**. Com dados notoriamente sujos, entregar o pipeline não basta — é preciso
+> *provar* que o dado é confiável. Aqui, a qualidade não é enfeite: ela muda a resposta.
+
+---
+
+## 🏛️ Arquitetura (Medallion)
+
+```
+TLC (parquet) → Landing → Bronze → Silver → Gold → Análises
+                                      │
+                                      ├── Quarentena (registros reprovados)
+                                      └── dq_results (scorecard / histórico)
+```
+
 | Camada  | Papel                                                        | Tabela                                     |
 | ------- | ------------------------------------------------------------ | ------------------------------------------ |
 | Landing | arquivos originais preservados                               | Volume `landing`                           |
@@ -80,25 +102,19 @@ a ocupação média sobe ao longo do dia (~1,3 pela manhã, ~1,42 à noite).
 ---
 
 ## 📁 Estrutura
+
+```
 NYCtaxi-case/
-
 ├─ src/
-
 │  ├─ 00_setup
-
 │  ├─ 01_ingestion_bronze
-
 │  ├─ 02_data_quality_silver
-
 │  └─ 03_gold_consumption
-
 ├─ analysis/
-
 │  └─ 04_analysis_questions
-
 ├─ README.md
-
 └─ requirements.txt
+```
 
 ---
 
