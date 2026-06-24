@@ -1,13 +1,9 @@
 # NYC Taxi Case — Pipeline de Dados com Data Quality em primeiro lugar
 
 Pipeline de ingestão, modelagem e análise dos dados de táxi amarelo de NYC (jan–mai/2023),
-construído em arquitetura **Medallion** no Databricks. O diferencial da solução é uma
-**camada de qualidade de dados** que garante que as respostas analíticas sejam **confiáveis**,
-e não apenas calculadas.
+Construído em arquitetura **Medallion** no Databricks. 
 
-> **Abordagem:** o enunciado é um case de Data Architect, mas a entrega traz a lente de um
-> **Data Tester**. Com dados notoriamente sujos, entregar o pipeline não basta — é preciso
-> *provar* que o dado é confiável. Aqui, a qualidade não é enfeite: ela muda a resposta.
+
 
 ---
 
@@ -37,7 +33,7 @@ TLC (parquet) → Landing → Bronze → Silver → Gold → Análises
 - **Unity Catalog** — governança e linhagem nativas (catálogo → schema → tabela/volume).
 - **Cast explícito de tipos na ingestão** — a fonte da TLC publica colunas com tipos inconsistentes entre meses (`timestamp_ntz` vs `timestamp`, `int` vs `long`); padronizei o schema na entrada para uma Bronze estável.
 - **Quarentena em vez de descarte** — registros reprovados são isolados e auditáveis, cada um com o motivo da rejeição. Dado ruim não some: vira evidência.
-- **DQ em PySpark puro** — transparente e fácil de demonstrar; em produção, na escala real, equivaleria a *expectations* declarativas (Spark Declarative Pipelines / Lakeflow) somadas a observability contínua.
+- **DQ em PySpark puro** — transparente e fácil de demonstrar; em produção, na escala real, equivaleria a *expectations* declarativas (Spark Declarative Pipelines / Lakeflow) somadas à observability contínua.
 
 ---
 
