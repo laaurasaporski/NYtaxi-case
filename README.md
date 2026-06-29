@@ -7,7 +7,7 @@ Construído em arquitetura **Medallion** no Databricks.
 
 ---
 
-## 🏛️ Arquitetura (Medallion)
+##  Arquitetura (Medallion)
 
 ```
 TLC (parquet) → Landing → Bronze → Silver → Gold → Análises
@@ -26,7 +26,7 @@ TLC (parquet) → Landing → Bronze → Silver → Gold → Análises
 
 ---
 
-## ⚙️ Decisões técnicas
+##  Decisões técnicas
 
 - **Databricks Free Edition** — o Community Edition foi descontinuado em jan/2026; a solução foi adaptada para o Free Edition (serverless).
 - **PySpark + Delta Lake** — requisito do case + transações ACID, time travel e evolução de schema.
@@ -37,7 +37,7 @@ TLC (parquet) → Landing → Bronze → Silver → Gold → Análises
 
 ---
 
-## 🔎 Qualidade de dados — resultados
+##  Qualidade de dados — resultados
 
 Foram aplicadas **11 regras** cobrindo **6 dimensões** de qualidade (completeness, validity,
 accuracy, consistency, timeliness, uniqueness).
@@ -54,7 +54,7 @@ de fora da janela jan–mai/2023.
 
 ---
 
-## 📊 Respostas
+##  Respostas
 
 As duas perguntas são respondidas em duas versões — **ingênua** (dado cru) e **confiável**
 (dado validado) — para evidenciar o impacto da qualidade na decisão.
@@ -97,7 +97,7 @@ a ocupação média sobe ao longo do dia (~1,3 pela manhã, ~1,42 à noite).
 
 ---
 
-## 📁 Estrutura
+##  Estrutura
 
 ```
 NYCtaxi-case/
