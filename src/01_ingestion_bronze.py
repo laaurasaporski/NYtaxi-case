@@ -35,7 +35,7 @@ from pyspark.sql import functions as F
 from functools import reduce
 
 
-# Colunas que interessam, já com o tipo padronizado (cast garante consistência entre meses)
+# (cast garante consistência entre meses)
 def padroniza(df, source_path):
     return (df.select(
                 F.col("VendorID").cast("long").alias("VendorID"),
